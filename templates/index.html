@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate My Professor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rate My Professor</h1>
+    </header>
+
+    <div class="container">
+        <h2>Submit Professor Page Link</h2>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="url">Professor Page URL:</label>
+                <input type="text" id="url" name="url" placeholder="Enter professor page URL" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2>Search Professors</h2>
+        <form action="/search" method="get">
+            <div class="form-group">
+                <label for="query">Search Criteria:</label>
+                <input type="text" id="query" name="query" placeholder="Enter search criteria" required>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Analyze Sentiment</h2>
+        <form action="/sentiment" method="post">
+            <div class="form-group">
+                <label for="review">Professor Review:</label>
+                <textarea id="review" name="review" placeholder="Enter professor review" rows="5" required></textarea>
+            </div>
+            <button type="submit">Analyze</button>
+        </form>
+
+        <h2>Query Professors</h2>
+        <form action="/query" method="get">
+            <div class="form-group">
+                <label for="query">Query:</label>
+                <input type="text" id="query" name="query" placeholder="Enter query" required>
+            </div>
+            <button type="submit">Query</button>
+        </form>
+    </div>
+</body>
+</html>
